@@ -1,5 +1,10 @@
 pipeline {
-agent any
+            agent {
+                        docker {
+                                    image : 'mcr.microsoft.com/dotnet/core/sdk:2.1'
+                        }
+            }
+            
 stages {
 stage ('Checkout') {
             steps {
